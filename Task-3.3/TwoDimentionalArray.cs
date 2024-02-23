@@ -1,12 +1,14 @@
 ﻿using System;
-namespace Task_3_2
+namespace Task_3_3
 {
-	public abstract class TwoDimentionalArray : RootClass
+	public abstract class TwoDimentionalArray : IRoot
 	{
-        public override int Rank()
+        public int Rank()
         {
             return 2;
         }
+        public abstract double AverageValue();
+        public abstract void Print();
     }
 }
 

@@ -1,7 +1,9 @@
 ﻿using System;
-namespace Task_3_2
+using System.Collections;
+
+namespace Task_3_3
 {
-    public sealed class OneDimentionalArray : RootClass
+    public sealed class OneDimentionalArray : IRoot, IDeleteDublicates
     {
         private int[] Array;
         public OneDimentionalArray(int length, bool manualEntry = false)
@@ -37,7 +39,7 @@ namespace Task_3_2
             }
         }
 
-        public override double AverageValue()
+        public double AverageValue()
         {
             double summa = 0;
             foreach (int el in Array)
@@ -47,7 +49,7 @@ namespace Task_3_2
             return summa / Array.Length;
 
         }
-        public override int Rank()
+        public int Rank()
         {
             return 1;
         }
@@ -88,8 +90,15 @@ namespace Task_3_2
         }
         public void DeleteDublicates()
         {
-            int[] ArrayWithoutDublicates = Array.Distinct().ToArray();
-            Array = ArrayWithoutDublicates;
+            var List1 = new List<int>();
+            for (int i = 0; i < Array.Length ;i++)
+            {
+                if (List1.Contains(Array[i]) == false)
+                {
+                    List1.Add(Array[i]);
+                }
+            }
+            Array = List1.ToArray();
         }
 
         public void Print()

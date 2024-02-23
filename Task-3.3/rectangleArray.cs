@@ -1,7 +1,7 @@
 ﻿using System;
-namespace Task_3_2
+namespace Task_3_3
 {
-    public sealed class RectangleArray : TwoDimentionalArray
+    public sealed class RectangleArray : TwoDimentionalArray, IPrintSnake
     {
 
         int[,] Array;
@@ -56,7 +56,7 @@ namespace Task_3_2
             }
             return summa / (Array.GetLength(0) * Array.GetLength(1));
         }
-        public void PrintNormal()
+        public override void Print()
         {
             for (int i = 0; i < Array.GetLength(0); i++)
             {
@@ -68,7 +68,7 @@ namespace Task_3_2
 
             }
         }
-        public void Print()
+        public void PrintSnake()
         {
             for (int i = 0; i < Array.GetLength(0); i++)
             {

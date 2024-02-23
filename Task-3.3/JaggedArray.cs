@@ -1,7 +1,7 @@
 ﻿using System;
-namespace Task_3_2
+namespace Task_3_3
 {
-	public sealed class JaggedArray : TwoDimentionalArray
+	public sealed class JaggedArray : TwoDimentionalArray, IChangeValues
 	{
         OneDimentionalArray[] Array;
         public JaggedArray(int length1, bool manualEntry = false)
@@ -73,7 +73,7 @@ namespace Task_3_2
 
             }
         }
-        public void Print()
+        public override void Print()
         {
             for (int i = 0; i < Array.Length; i++)
             {
